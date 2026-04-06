@@ -1,0 +1,15 @@
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\bin\Debug\net9.0\ToDoList.exe
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\bin\Debug\net9.0\ToDoList.deps.json
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\bin\Debug\net9.0\ToDoList.runtimeconfig.json
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\bin\Debug\net9.0\ToDoList.dll
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\bin\Debug\net9.0\ToDoList.pdb
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.AssemblyInfoInputs.cache
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.AssemblyInfo.cs
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.csproj.CoreCompileInputs.cache
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.sourcelink.json
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.dll
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\refint\ToDoList.dll
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.pdb
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ToDoList.genruntimeconfig.cache
+C:\Users\M3500\iCloudDrive\Estudios\Universidad Europea\7. Fundamentos de Programacion\evaluaciones\Fundamentos T1 E3\ToDoList\obj\Debug\net9.0\ref\ToDoList.dll
