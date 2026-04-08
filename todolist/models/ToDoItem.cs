@@ -9,7 +9,6 @@ public class ToDoItem
     public String Descripcion { get; set;}
     public bool Prioridad { get; set; }
     public Tipo Tipo { get; set; }
-    public bool Completada { get; set; }
 
     // =========== CONSTRUCTORES ============
     public ToDoItem(){}
@@ -20,7 +19,6 @@ public class ToDoItem
         Descripcion = descripcion;
         Tipo = tipo;
         Prioridad = prioridad;
-        Completada = false;
     }
 
     // =============== METODOS ==============
@@ -106,25 +104,22 @@ public class ToDoItem
     }
 
     // LOOP MOSTRAR TAREA
-    public static void LoopMostrarTareas(List<ToDoItem> database)
+    public static void LoopMostrarTareas(ToDoService service)
     {
-        if (database.Count > 0)
+        if (service.isEmpty())
         {
-            int counter = 1;
-            foreach (ToDoItem item in database)
-            {
-                if (counter > 1)
-                {
-                    System.Console.WriteLine();
-                }
-                System.Console.WriteLine("Tarea " + counter + ": ");
-                MostrarTarea(item);
-                counter++;
-            }
+            System.Console.WriteLine("No hay tareas todavía...");
         } 
         else
         {
-            System.Console.WriteLine("No hay tareas todavía...");
+            int counter = 1;
+            foreach (ToDoItem tarea in service.getDatabase())
+            {
+                if (counter > 1) { System.Console.WriteLine(); } // un espacio
+                System.Console.WriteLine("Tarea " + counter + ": ");
+                MostrarTarea(tarea);
+                counter++;
+            }
         }
     }
     
@@ -153,8 +148,6 @@ public class ToDoItem
                 System.Console.WriteLine("\n======== TAREA ENCONTRADA! =========\n");
                 MostrarTarea(tarea);
             }
-
-            
         }
     }
 
@@ -175,7 +168,7 @@ public class ToDoItem
 
             if (tarea != null)
             {
-                aviso = "¿Estás seguro que deseas eliminar la tarea " + tarea.Titulo + "? (1. Sí   2. No)";
+                aviso = "¿Estás seguro que deseas eliminar la tarea '" + tarea.Titulo + "'? (1. Sí   2. No):";
                 int eliminarChoice = Helpers.ScannerHelperInt(aviso, 1, 2);
 
                 switch (eliminarChoice)

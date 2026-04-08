@@ -36,7 +36,7 @@ class ToDoList
                         break;
                     case 2:
                         System.Console.WriteLine("\n*+-.-+*+-. VER TAREAS .-+*+-.-+*\n");
-                        ToDoItem.LoopMostrarTareas(service.getDatabase());
+                        ToDoItem.LoopMostrarTareas(service);
                         break;
                     case 3:
                         System.Console.WriteLine("\n*+-.-+*+-. BUSCAR TAREA .-+*+-.-+*\n");
@@ -48,6 +48,7 @@ class ToDoList
                         break;
                     case 5:
                         System.Console.WriteLine("\n*+-.-+*+-. EXPORTAR TAREA .-+*+-.-+*\n");
+                        service.ExportarArchivo("archivoTareas");
                         break;
                     case 0:
                         salir = true;
