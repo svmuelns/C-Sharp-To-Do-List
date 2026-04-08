@@ -113,6 +113,10 @@ public class ToDoItem
             int counter = 1;
             foreach (ToDoItem item in database)
             {
+                if (counter > 1)
+                {
+                    System.Console.WriteLine();
+                }
                 System.Console.WriteLine("Tarea " + counter + ": ");
                 MostrarTarea(item);
                 counter++;
@@ -130,17 +134,65 @@ public class ToDoItem
         if (service.isEmpty())
         {
             Console.WriteLine("No hay tareas todavía...");
+            return;
         }
         else
         {
             String aviso = "Escribe el ID de la tarea: ";
+            String userInput = Helpers.ScannerHelperString(aviso, 32, 32);
+
+            ToDoItem? tarea = service.BuscarTarea(userInput);
+
+            if (tarea == null)
+            {
+                System.Console.WriteLine("Tarea no encontrada...");
+                return;
+            }
+            else
+            {
+                System.Console.WriteLine("\n======== TAREA ENCONTRADA! =========\n");
+                MostrarTarea(tarea);
+            }
+
+            
+        }
+    }
+
+    // ELIMINAR TAREA
+    public static void EliminarTarea(ToDoService service)
+    {
+        if (service.isEmpty())
+        {
+            System.Console.WriteLine("No hay tareas todavía...");
+        }
+        else
+        {
+            String aviso = "Escribe el ID de la tarea que deseas eliminar: ";
 
             String userInput = Helpers.ScannerHelperString(aviso, 32, 32);
 
             ToDoItem? tarea = service.BuscarTarea(userInput);
 
-            System.Console.WriteLine("\n======== TAREA ENCONTRADA ========\n");
-            MostrarTarea(tarea);
+            if (tarea != null)
+            {
+                aviso = "¿Estás seguro que deseas eliminar la tarea " + tarea.Titulo + "? (1. Sí   2. No)";
+                int eliminarChoice = Helpers.ScannerHelperInt(aviso, 1, 2);
+
+                switch (eliminarChoice)
+                {
+                    case 1:
+                        service.EliminarTarea(tarea.Id);
+                        System.Console.WriteLine("La tarea ha sido eliminada con éxito!");
+                        break;
+                    case 2:
+                        break;
+                }
+                
+            }
+            else
+            {
+                System.Console.WriteLine("No se puede eliminar porque la tarea no ha sido encontrada...");
+            }
         }
     }
 }

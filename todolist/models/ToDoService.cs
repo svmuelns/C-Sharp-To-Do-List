@@ -17,15 +17,11 @@ namespace AppToDoList
         {
             database.RemoveAll( t => t.Id == id); 
         }
-        public ToDoItem BuscarTarea(string id)
+        public ToDoItem? BuscarTarea(string id)
         {
             ToDoItem? foundItem = database.FirstOrDefault(t => 
             t.Id.Trim().Equals(id.Trim(), StringComparison.OrdinalIgnoreCase));
             
-            if (foundItem == null)
-            {
-                System.Console.WriteLine("Tarea no encontrada.");  
-            }
             return foundItem;
         }
         public bool isEmpty()

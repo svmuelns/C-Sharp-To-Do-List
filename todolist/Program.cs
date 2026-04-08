@@ -44,6 +44,7 @@ class ToDoList
                         break;
                     case 4:
                         System.Console.WriteLine("\n*+-.-+*+-. ELIMINAR TAREA .-+*+-.-+*\n");
+                        ToDoItem.EliminarTarea(service);
                         break;
                     case 5:
                         System.Console.WriteLine("\n*+-.-+*+-. EXPORTAR TAREA .-+*+-.-+*\n");
