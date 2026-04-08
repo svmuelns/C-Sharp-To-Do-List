@@ -9,7 +9,7 @@ public class ToDoItem
     public String Descripcion { get; set;}
     public bool Prioridad { get; set; }
     public Tipo Tipo { get; set; }
-    List<ToDoItem> database = new List<ToDoItem>();
+    public bool Completada { get; set; }
 
     // =========== CONSTRUCTORES ============
     public ToDoItem(){}
@@ -20,8 +20,7 @@ public class ToDoItem
         Descripcion = descripcion;
         Tipo = tipo;
         Prioridad = prioridad;
-
-        database.Add(this);
+        Completada = false;
     }
 
     // =============== METODOS ==============
@@ -77,7 +76,7 @@ public class ToDoItem
         return prioridad;
     }
 
-    // CREAR CONSTRUCTOR
+    // CREAR TAREA
     public static ToDoItem CrearTarea()
     {
         string titulo = AgregarTitulo();
@@ -94,6 +93,55 @@ public class ToDoItem
     public static void MostrarMenuTipo()
     {
         System.Console.WriteLine("\n     1. Personal     2. Trabajo     3. Ocio\n");
+    }
+
+    // MOSTRAR TAREA
+    public static void MostrarTarea(ToDoItem item)
+    {
+        System.Console.WriteLine("     Id: " + item.Id);
+        System.Console.WriteLine("     Título: " + item.Titulo);
+        System.Console.WriteLine("     Descripción: " + item.Descripcion);
+        System.Console.WriteLine("     Tipo: " + item.Tipo);
+        System.Console.WriteLine("     Prioridad: " + item.Prioridad);
+    }
+
+    // LOOP MOSTRAR TAREA
+    public static void LoopMostrarTareas(List<ToDoItem> database)
+    {
+        if (database.Count > 0)
+        {
+            int counter = 1;
+            foreach (ToDoItem item in database)
+            {
+                System.Console.WriteLine("Tarea " + counter + ": ");
+                MostrarTarea(item);
+                counter++;
+            }
+        } 
+        else
+        {
+            System.Console.WriteLine("No hay tareas todavía...");
+        }
+    }
+    
+    // BUSCAR TAREA POR ID
+    public static void BuscarTareaPorID(ToDoService service)
+    {
+        if (service.isEmpty())
+        {
+            Console.WriteLine("No hay tareas todavía...");
+        }
+        else
+        {
+            String aviso = "Escribe el ID de la tarea: ";
+
+            String userInput = Helpers.ScannerHelperString(aviso, 32, 32);
+
+            ToDoItem? tarea = service.BuscarTarea(userInput);
+
+            System.Console.WriteLine("\n======== TAREA ENCONTRADA ========\n");
+            MostrarTarea(tarea);
+        }
     }
 }
 

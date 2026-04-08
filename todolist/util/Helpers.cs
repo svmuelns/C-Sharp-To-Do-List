@@ -17,7 +17,8 @@ namespace AppToDoList.util
                     if (input >= min && input <= max)
                     {
                         return input;
-                    } else
+                    } 
+                    else
                     {
                         System.Console.WriteLine("Opción inválida, elige un número entre " + min + " y " + max);
                     }

@@ -1,11 +1,13 @@
 ﻿using AppToDoList.util;
 using AppToDoList.models;
+using AppToDoList;
 
 class ToDoList
 {
     static void Main()
     {
         bool salir;
+        ToDoService service = new ToDoService();
 
         System.Console.WriteLine("Inciando programa...");
         do
@@ -24,25 +26,21 @@ class ToDoList
                 {
                     case 1:
                         System.Console.WriteLine("\n*+-.-+*+-. AGREGAR TAREA .-+*+-.-+*\n");      
-                        
-                       /*  String titulo = ToDoItem.AgregarTitulo();
-                        System.Console.WriteLine("Titulo: " + titulo);
 
-                        String descripcion = ToDoItem.AgregarDescripcion();
-                        System.Console.WriteLine("Descripcion: " + descripcion);
+                        // Crear tarea
+                        ToDoItem tarea = ToDoItem.CrearTarea();
 
-                        Tipo tipo = ToDoItem.AgregarTipo();
-                        System.Console.WriteLine("Tipo: " + tipo);
-                         */
-
-                        ToDoItem.CrearTarea();
+                        // Agregar tarea a la base de datos
+                        service.AgregarTarea(tarea);
 
                         break;
                     case 2:
                         System.Console.WriteLine("\n*+-.-+*+-. VER TAREAS .-+*+-.-+*\n");
+                        ToDoItem.LoopMostrarTareas(service.getDatabase());
                         break;
                     case 3:
                         System.Console.WriteLine("\n*+-.-+*+-. BUSCAR TAREA .-+*+-.-+*\n");
+                        ToDoItem.BuscarTareaPorID(service);
                         break;
                     case 4:
                         System.Console.WriteLine("\n*+-.-+*+-. ELIMINAR TAREA .-+*+-.-+*\n");
@@ -64,12 +62,12 @@ class ToDoList
         static void MainMenu()
         {
             System.Console.WriteLine("\n*+-.-+*+-. TO-DO LIST .-+*+-.-+*\n");
-            System.Console.WriteLine("1. Crear tarea");
-            System.Console.WriteLine("2. Ver tareas");
-            System.Console.WriteLine("3. Buscar tarea");
-            System.Console.WriteLine("4. Eliminar tarea");
-            System.Console.WriteLine("5. Exportar tareas");
-            System.Console.WriteLine("0. Salir");
+            System.Console.WriteLine("     1. Crear tarea");
+            System.Console.WriteLine("     2. Ver tareas");
+            System.Console.WriteLine("     3. Buscar tarea");
+            System.Console.WriteLine("     4. Eliminar tarea");
+            System.Console.WriteLine("     5. Exportar tareas");
+            System.Console.WriteLine("     0. Salir");
         }
 
         
