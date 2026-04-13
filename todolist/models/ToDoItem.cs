@@ -1,5 +1,4 @@
 using AppToDoList.util;
-
 namespace AppToDoList.models;
 
 public class ToDoItem

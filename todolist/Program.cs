@@ -8,7 +8,7 @@ class ToDoList
     {
         bool salir;
         ToDoService service = new ToDoService();
-        service.CargarTareas();
+        service.ImportarTareas();
 
         System.Console.WriteLine("Inciando programa...");
         do
@@ -49,7 +49,7 @@ class ToDoList
                         break;
                     case 5:
                         System.Console.WriteLine("\n*+-.-+*+-. EXPORTAR TAREA .-+*+-.-+*\n");
-                        service.GuardarTareas();
+                        service.ExportarTareas();
                         break;
                     case 0:
                         salir = true;
